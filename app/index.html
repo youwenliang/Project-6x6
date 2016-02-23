@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Project 6x6 - Six Year Anniversary</title>
+    <meta name="description" content="Nita + Youwen 6 year anniversary">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/Swiper/dist/css/swiper.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="home-screen">
+      <div id="logo"></div>
+      <a id="enter">
+        ENTER
+        <div id="arrow"></div>
+      </a>
+    </div>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div id="home">
+          <div class="hexagon"></div>
+        </div>
+
+        <div class="parallax-bg"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="slide1">
+                <div class="card">
+                  <div class="title" data-swiper-parallax="-140">Chapter 1</div>
+                  <div class="subtitle" data-swiper-parallax="-160">Begins</div>
+                  <div class="text" data-swiper-parallax="-180">
+                      <p>6 reasons I like you</p>
+                  </div>
+                  <a id="expand">ENTER</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                  <div class="title" data-swiper-parallax="-140">Chapter 2</div>
+                  <div class="subtitle" data-swiper-parallax="-160">Favorite</div>
+                  <div class="text" data-swiper-parallax="-180">
+                      <p>6 reasons I like you</p>
+                  </div>
+                  <a id="expand">ENTER</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                  <div class="title" data-swiper-parallax="-140">Chapter 3</div>
+                  <div class="subtitle" data-swiper-parallax="-160">Loves</div>
+                  <div class="text" data-swiper-parallax="-180">
+                      <p>6 reasons I like you</p>
+                  </div>
+                  <a id="expand">ENTER</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                  <div class="title" data-swiper-parallax="-100">Chapter 4</div>
+                  <div class="subtitle" data-swiper-parallax="-200">Travel</div>
+                  <div class="text" data-swiper-parallax="-300">
+                      <p>6 reasons I like you</p>
+                  </div>
+                  <a id="expand">ENTER</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                  <div class="title" data-swiper-parallax="-140">Chapter 5</div>
+                  <div class="subtitle" data-swiper-parallax="-160">Dreams</div>
+                  <div class="text" data-swiper-parallax="-180">
+                      <p>6 reasons I like you</p>
+                  </div>
+                  <a id="expand">ENTER</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                  <div class="title" data-swiper-parallax="-140">Chapter 6</div>
+                  <div class="subtitle" data-swiper-parallax="-160">Ideas</div>
+                  <div class="text" data-swiper-parallax="-180">
+                      <p>6 reasons I like you</p>
+                  </div>
+                  <a id="expand">ENTER</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/Swiper/dist/js/swiper.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- Initialize Swiper -->
+    <script>
+    var colors = [[208,191,158],[253,233,201],[180,219,202],[113,164,160],[154,186,199],[96,165,182]];
+
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        parallax: true,
+        speed: 600,
+        onSlideChangeEnd: function(swiper) {
+          i = swiper.activeIndex;
+          $('.parallax-bg').css('background','rgb('+colors[i][0]+','+colors[i][1]+','+colors[i][2]+')');
+        },
+        // onProgress: function(swiper, progress) {
+        //   if(progress < 0.2){
+        //     var r = colors[0][0]+(colors[1][0]-colors[0][0])/0.2*progress;
+        //     var g = colors[0][1]+(colors[1][1]-colors[0][1])/0.2*progress;
+        //     var b = colors[0][2]+(colors[1][2]-colors[0][2])/0.2*progress;
+        //     console.log('rgb('+r+','+g+','+b+')');
+        //     $('.parallax-bg').css('background','rgb('+r+','+g+','+b+')');
+        //   }
+        // }
+    });
+    </script>
+</body>
+</html>

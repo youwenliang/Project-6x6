@@ -1,0 +1,409 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+
+.home-screen {
+  width: 100%;
+  height: 100%;
+}
+
+#logo {
+  background-image: url(../images/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  width: 88%;
+  max-width: 390px;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  top: 13%;
+}
+
+#logo:before{
+  content: "";
+  display: block;
+  padding-top: 100%;  /* initial ratio of 1:1*/
+}
+
+#enter, #expand {
+  width: 300px;
+  display: block;
+  position: absolute;
+  margin:0 auto;
+  left:0;
+  right:0;
+  bottom: 100px;
+  font-family: 'apercubold_italic';
+  font-size: 14pt;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #2B3F46;
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+#expand {
+  bottom: 60px;
+  color: #1D1E1D;
+}
+
+#arrow {
+  background-image: url(../images/arrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 50px;
+  left:0;
+  right:0;
+  margin: 10px auto;
+}
+
+#home {
+  position: absolute;
+  width: 40px;
+  margin: 0 auto;
+  left:0;
+  right:0;
+  top: 30px;
+}
+
+.hexagon {
+  position: relative;
+  width: 40px; 
+  height: 23.09px;
+  margin: 11.55px 0;
+  border-left: solid 4px #fff;
+  border-right: solid 4px #fff;
+  z-index: 100;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 28.28px;
+  height: 28.28px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 2.3px;
+}
+
+.hexagon:before {
+  top: -14.1421px;
+  border-top: solid 5.6569px #fff;
+  border-right: solid 5.6569px #fff;
+}
+
+.hexagon:after {
+  bottom: -14.1421px;
+  border-bottom: solid 5.6569px #fff;
+  border-left: solid 5.6569px #fff;
+}
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    font-size: 18px;
+    color:#1D1E1D;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+}
+.parallax-bg {
+    background: rgb(208,191,158);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    -webkit-transition: background 1s; /* Safari */
+    transition: background 1s;
+}
+.swiper-slide .title {
+    margin-top: calc(100% - 100px);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: Georgia;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+.swiper-slide .subtitle {
+    font-size: 50px;
+    letter-spacing: 5px;
+    font-family: "apercubold";
+    text-align: center;
+    text-transform: uppercase;
+}
+.swiper-slide .text {
+    font-size: 20px;
+    max-width: 400px;
+    text-align: center;
+    line-height: 1.3;
+    font-family: "aperculight_italic";
+}
+
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 5px;
+    border-radius: 0px !important;
+    opacity: 1;
+    background: rgba(255,255,255,0.5);
+}
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: block;
+  height: calc(100% - 140px);
+  position: absolute;
+  width: 330px;
+  margin: 0 auto;
+  left:0;
+  right:0;
+  top: 100px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on January 16, 2016 */
+
+@font-face {
+    font-family: 'apercubold_italic';
+    src: url('fonts/apercu_bold_italic-webfont.eot');
+    src: url('fonts/apercu_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercu_bold_italic-webfont.woff2') format('woff2'),
+         url('fonts/apercu_bold_italic-webfont.woff') format('woff'),
+         url('fonts/apercu_bold_italic-webfont.ttf') format('truetype'),
+         url('fonts/apercu_bold_italic-webfont.svg#apercubold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'apercubold';
+    src: url('fonts/apercu_bold-webfont.eot');
+    src: url('fonts/apercu_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercu_bold-webfont.woff2') format('woff2'),
+         url('fonts/apercu_bold-webfont.woff') format('woff'),
+         url('fonts/apercu_bold-webfont.ttf') format('truetype'),
+         url('fonts/apercu_bold-webfont.svg#apercubold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'aperculight_italic';
+    src: url('fonts/apercu_light_italic-webfont.eot');
+    src: url('fonts/apercu_light_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercu_light_italic-webfont.woff2') format('woff2'),
+         url('fonts/apercu_light_italic-webfont.woff') format('woff'),
+         url('fonts/apercu_light_italic-webfont.ttf') format('truetype'),
+         url('fonts/apercu_light_italic-webfont.svg#aperculight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'apercuregular';
+    src: url('fonts/apercu_light-webfont.eot');
+    src: url('fonts/apercu_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercu_light-webfont.woff2') format('woff2'),
+         url('fonts/apercu_light-webfont.woff') format('woff'),
+         url('fonts/apercu_light-webfont.ttf') format('truetype'),
+         url('fonts/apercu_light-webfont.svg#apercuregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'apercumedium_italic';
+    src: url('fonts/apercu_medium_italic-webfont.eot');
+    src: url('fonts/apercu_medium_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercu_medium_italic-webfont.woff2') format('woff2'),
+         url('fonts/apercu_medium_italic-webfont.woff') format('woff'),
+         url('fonts/apercu_medium_italic-webfont.ttf') format('truetype'),
+         url('fonts/apercu_medium_italic-webfont.svg#apercumedium_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'apercumedium';
+    src: url('fonts/apercu_medium-webfont.eot');
+    src: url('fonts/apercu_medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercu_medium-webfont.woff2') format('woff2'),
+         url('fonts/apercu_medium-webfont.woff') format('woff'),
+         url('fonts/apercu_medium-webfont.ttf') format('truetype'),
+         url('fonts/apercu_medium-webfont.svg#apercumedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'apercuitalic';
+    src: url('fonts/apercu_regular_italic-webfont.eot');
+    src: url('fonts/apercu_regular_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercu_regular_italic-webfont.woff2') format('woff2'),
+         url('fonts/apercu_regular_italic-webfont.woff') format('woff'),
+         url('fonts/apercu_regular_italic-webfont.ttf') format('truetype'),
+         url('fonts/apercu_regular_italic-webfont.svg#apercuitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'apercuregular';
+    src: url('fonts/apercu_regular-webfont.eot');
+    src: url('fonts/apercu_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercu_regular-webfont.woff2') format('woff2'),
+         url('fonts/apercu_regular-webfont.woff') format('woff'),
+         url('fonts/apercu_regular-webfont.ttf') format('truetype'),
+         url('fonts/apercu_regular-webfont.svg#apercuregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
