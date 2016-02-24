@@ -40,14 +40,14 @@
 
         <div class="parallax-bg"></div>
         <div class="swiper-wrapper">
-            <div class="swiper-slide" id="slide1">
+            <div class="swiper-slide">
                 <div class="card">
                   <div class="title" data-swiper-parallax="-140">Chapter 1</div>
                   <div class="subtitle" data-swiper-parallax="-160">Begins</div>
                   <div class="text" data-swiper-parallax="-180">
                       <p>6 reasons I like you</p>
                   </div>
-                  <a id="expand">ENTER</a>
+                  <a class="expand">ENTER</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -57,7 +57,7 @@
                   <div class="text" data-swiper-parallax="-180">
                       <p>6 reasons I like you</p>
                   </div>
-                  <a id="expand">ENTER</a>
+                  <a class="expand">ENTER</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -67,7 +67,7 @@
                   <div class="text" data-swiper-parallax="-180">
                       <p>6 reasons I like you</p>
                   </div>
-                  <a id="expand">ENTER</a>
+                  <a class="expand">ENTER</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -77,7 +77,7 @@
                   <div class="text" data-swiper-parallax="-300">
                       <p>6 reasons I like you</p>
                   </div>
-                  <a id="expand">ENTER</a>
+                  <a class="expand">ENTER</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -87,7 +87,7 @@
                   <div class="text" data-swiper-parallax="-180">
                       <p>6 reasons I like you</p>
                   </div>
-                  <a id="expand">ENTER</a>
+                  <a class="expand">ENTER</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -97,7 +97,7 @@
                   <div class="text" data-swiper-parallax="-180">
                       <p>6 reasons I like you</p>
                   </div>
-                  <a id="expand">ENTER</a>
+                  <a class="expand">ENTER</a>
                 </div>
             </div>
         </div>
@@ -105,6 +105,20 @@
         <div class="swiper-pagination"></div>
     </div>
 
+    <!-- Swiper -->
+    <div class="swiper-contents">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="slide1">
+                  
+            </div>
+            <div class="swiper-slide" id="slide2">
+              
+            </div>
+            <div class="swiper-slide" id="slide3">
+              
+            </div>
+        </div>
+    </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -139,31 +153,5 @@
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
-    <!-- Initialize Swiper -->
-    <script>
-    var colors = [[208,191,158],[253,233,201],[180,219,202],[113,164,160],[154,186,199],[96,165,182]];
-
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        parallax: true,
-        speed: 600,
-        onSlideChangeEnd: function(swiper) {
-          i = swiper.activeIndex;
-          $('.parallax-bg').css('background','rgb('+colors[i][0]+','+colors[i][1]+','+colors[i][2]+')');
-        },
-        // onProgress: function(swiper, progress) {
-        //   if(progress < 0.2){
-        //     var r = colors[0][0]+(colors[1][0]-colors[0][0])/0.2*progress;
-        //     var g = colors[0][1]+(colors[1][1]-colors[0][1])/0.2*progress;
-        //     var b = colors[0][2]+(colors[1][2]-colors[0][2])/0.2*progress;
-        //     console.log('rgb('+r+','+g+','+b+')');
-        //     $('.parallax-bg').css('background','rgb('+r+','+g+','+b+')');
-        //   }
-        // }
-    });
-    </script>
 </body>
 </html>

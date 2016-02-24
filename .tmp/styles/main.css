@@ -4558,7 +4558,7 @@ body {
   padding-top: 100%;
   /* initial ratio of 1:1*/ }
 
-#enter, #expand {
+#enter, .expand {
   width: 300px;
   display: block;
   position: absolute;
@@ -4571,12 +4571,14 @@ body {
   text-align: center;
   letter-spacing: 2px;
   color: #2B3F46; }
-  #enter:hover, #expand:hover {
+  #enter:hover, .expand:hover {
     text-decoration: none; }
 
-#expand {
+.expand {
   bottom: 60px;
   color: #1D1E1D; }
+  .expand:hover {
+    color: #1D1E1D; }
 
 #arrow {
   background-image: url(../images/arrow.png);
@@ -4605,7 +4607,10 @@ body {
   margin: 11.55px 0;
   border-left: solid 4px #fff;
   border-right: solid 4px #fff;
-  z-index: 100; }
+  z-index: 100;
+  /* Safari */
+  transition: all 1s;
+  transition-delay: 0.5s; }
 
 .hexagon:before, .hexagon:after {
   content: "";
@@ -4621,14 +4626,128 @@ body {
 .hexagon:before {
   top: -14.1421px;
   border-top: solid 5.6569px #fff;
-  border-right: solid 5.6569px #fff; }
+  border-right: solid 5.6569px #fff;
+  /* Safari */
+  transition: all 1s;
+  transition-delay: 0.5s; }
 
 .hexagon:after {
   bottom: -14.1421px;
   border-bottom: solid 5.6569px #fff;
-  border-left: solid 5.6569px #fff; }
+  border-left: solid 5.6569px #fff;
+  /* Safari */
+  transition: all 1s;
+  transition-delay: 0.5s; }
 
-.swiper-container {
+.hexagon.add-color-1 {
+  border-left: solid 4px #d0bf9e;
+  border-right: solid 4px #d0bf9e;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-1:before {
+  border-top: solid 5.6569px #d0bf9e;
+  border-right: solid 5.6569px #d0bf9e;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-1:after {
+  border-bottom: solid 5.6569px #d0bf9e;
+  border-left: solid 5.6569px #d0bf9e;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-2 {
+  border-left: solid 4px #fde9c9;
+  border-right: solid 4px #fde9c9;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-2:before {
+  border-top: solid 5.6569px #fde9c9;
+  border-right: solid 5.6569px #fde9c9;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-2:after {
+  border-bottom: solid 5.6569px #fde9c9;
+  border-left: solid 5.6569px #fde9c9;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-3 {
+  border-left: solid 4px #b4dbca;
+  border-right: solid 4px #b4dbca;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-3:before {
+  border-top: solid 5.6569px #b4dbca;
+  border-right: solid 5.6569px #b4dbca;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-3:after {
+  border-bottom: solid 5.6569px #b4dbca;
+  border-left: solid 5.6569px #b4dbca;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-4 {
+  border-left: solid 4px #71a4a0;
+  border-right: solid 4px #71a4a0;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-4:before {
+  border-top: solid 5.6569px #71a4a0;
+  border-right: solid 5.6569px #71a4a0;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-4:after {
+  border-bottom: solid 5.6569px #71a4a0;
+  border-left: solid 5.6569px #71a4a0;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-5 {
+  border-left: solid 4px #9abac7;
+  border-right: solid 4px #9abac7;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-5:before {
+  border-top: solid 5.6569px #9abac7;
+  border-right: solid 5.6569px #9abac7;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-5:after {
+  border-bottom: solid 5.6569px #9abac7;
+  border-left: solid 5.6569px #9abac7;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-6 {
+  border-left: solid 4px #60a5b6;
+  border-right: solid 4px #60a5b6;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-6:before {
+  border-top: solid 5.6569px #60a5b6;
+  border-right: solid 5.6569px #60a5b6;
+  /* Safari */
+  transition: all 1s; }
+
+.hexagon.add-color-6:after {
+  border-bottom: solid 5.6569px #60a5b6;
+  border-left: solid 5.6569px #60a5b6;
+  /* Safari */
+  transition: all 1s; }
+
+.swiper-container, .swiper-contents {
   width: 100%;
   height: 100%; }
 
@@ -4668,7 +4787,6 @@ body {
 
 .swiper-slide .text {
   font-size: 20px;
-  max-width: 400px;
   text-align: center;
   line-height: 1.3;
   font-family: "aperculight_italic"; }

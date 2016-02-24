@@ -49,7 +49,7 @@ body {
   padding-top: 100%;  /* initial ratio of 1:1*/
 }
 
-#enter, #expand {
+#enter, .expand {
   width: 300px;
   display: block;
   position: absolute;
@@ -68,9 +68,13 @@ body {
   }
 }
 
-#expand {
+.expand {
   bottom: 60px;
   color: #1D1E1D;
+
+  &:hover{
+    color: #1D1E1D;    
+  }
 }
 
 #arrow {
@@ -95,6 +99,8 @@ body {
   top: 30px;
 }
 
+
+
 .hexagon {
   position: relative;
   width: 40px; 
@@ -103,6 +109,10 @@ body {
   border-left: solid 4px #fff;
   border-right: solid 4px #fff;
   z-index: 100;
+  -webkit-transition: all 1s; /* Safari */
+  transition: all 1s;
+  -webkit-transition-delay: .5s;
+    transition-delay: .5s;
 }
 
 .hexagon:before,
@@ -118,21 +128,58 @@ body {
   background-color: inherit;
   left: 2.3px;
 }
-
 .hexagon:before {
   top: -14.1421px;
   border-top: solid 5.6569px #fff;
   border-right: solid 5.6569px #fff;
+  -webkit-transition: all 1s; /* Safari */
+  transition: all 1s;
+  -webkit-transition-delay: .5s;
+    transition-delay: .5s;
 }
 
 .hexagon:after {
   bottom: -14.1421px;
   border-bottom: solid 5.6569px #fff;
   border-left: solid 5.6569px #fff;
+  -webkit-transition: all 1s; /* Safari */
+  transition: all 1s;
+  -webkit-transition-delay: .5s;
+    transition-delay: .5s;
 }
 
+$colors : color-1 rgb(208,191,158),
+          color-2 rgb(253,233,201),
+          color-3 rgb(180,219,202),
+          color-4 rgb(113,164,160),
+          color-5 rgb(154,186,199),
+          color-6 rgb(96,165,182);
 
-.swiper-container {
+@each $color in $colors{
+  .hexagon.add-#{nth($color,1)}{
+    border-left: solid 4px nth($color,2);
+    border-right: solid 4px nth($color,2);
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+
+  }
+  .hexagon.add-#{nth($color,1)}:before{
+    border-top: solid 5.6569px nth($color,2);
+    border-right: solid 5.6569px nth($color,2);
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+
+  }
+  .hexagon.add-#{nth($color,1)}:after{
+    border-bottom: solid 5.6569px nth($color,2);
+    border-left: solid 5.6569px nth($color,2);
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+    
+  }
+}
+
+.swiper-container, .swiper-contents {
     width: 100%;
     height: 100%;
 }
@@ -174,7 +221,6 @@ body {
 }
 .swiper-slide .text {
     font-size: 20px;
-    max-width: 400px;
     text-align: center;
     line-height: 1.3;
     font-family: "aperculight_italic";
