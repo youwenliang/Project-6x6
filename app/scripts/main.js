@@ -1,6 +1,6 @@
 
 var contents = [
-     ["1-1","1-2","1-3","1-4","1-5","1-6"],
+     ["#01 Laugh a lot","#02 Never bored","#03 Easily understand","#04 Professional","#05 Believe in me","#06 Look after me"],
      ["2-1","2-2","2-3","2-4","2-5","2-6"],
      ["3-1","3-2","3-3","3-4","3-5","3-6"],
      ["4-1","4-2","4-3","4-4","4-5","4-6"],
@@ -32,6 +32,9 @@ var stage = 0;
 var current;
 var currentH;
 var currentCH;
+var currentCH2;
+var currentCH3;
+var $this;
 
 $(document).ready(function() {
     $('#enter').click(function(){
@@ -39,6 +42,13 @@ $(document).ready(function() {
     		marginTop: -$(window).height(),
     		ease: Power3.easeInOut
     	});
+        var r = Math.floor((Math.random() * 6) + 1);
+        $('#photo1').css({"background-image":"url(images/6-1-"+r+".jpg)"});
+        $('#photo2').css({"background-image":"url(images/6-2-"+r+".jpg)"});
+        $('#photo3').css({"background-image":"url(images/6-3-"+r+".jpg)"});
+        $('#photo4').css({"background-image":"url(images/6-4-"+r+".jpg)"});
+        $('#photo5').css({"background-image":"url(images/6-5-"+r+".jpg)"});
+        $('#photo6').css({"background-image":"url(images/6-6-"+r+".jpg)"});
     });
 
     $('.hexagon').click(function(){
@@ -54,6 +64,10 @@ $(document).ready(function() {
                 ease: Power3.easeInOut,
                 onComplete: function(){
                     swiper2.slideTo(0);
+                    TweenLite.to($this, .5, {
+                        opacity: 1,
+                        scale: 1,
+                    });
                 }
             });
             TweenLite.to(current.children(), .5, {
@@ -67,10 +81,26 @@ $(document).ready(function() {
                 width: "330px",
                 height: currentH,
                 delay: .5,
+                ease: Power1.easeInOut,
+                onComplete: function(){
+                    TweenLite.to($('.photo'), .5, {
+                        opacity: 1,
+                        ease: Power1.easeInOut
+                    });
+                }
+            });
+            TweenLite.to(current.children('.title'), .5, {
+                marginTop: currentCH,
+                delay: .5,
                 ease: Power1.easeInOut
             });
-            TweenLite.to(current.children().first(), .5, {
-                marginTop: currentCH,
+            TweenLite.to(current.children('.subtitle'), .5, {
+                marginTop: currentCH2,
+                delay: .5,
+                ease: Power1.easeInOut
+            });
+            TweenLite.to(current.children('.text'), .5, {
+                marginTop: currentCH3,
                 delay: .5,
                 ease: Power1.easeInOut
             });
@@ -82,30 +112,64 @@ $(document).ready(function() {
     $('.expand').click(function(){
         current = $(this).parent();
         currentH = $(this).parent().height();
-        currentCH = $(this).parent().children().first().css("margin-top");
-        TweenLite.to($(this).parent().children(), .5, {
-            scale: 0.8,
-            ease: Power1.easeInOut
+        currentCH = $(this).parent().children('.title').css("margin-top");
+        currentCH2 = $(this).parent().children('.subtitle').css("margin-top");
+        currentCH3 = $(this).parent().children('.text').css("margin-top");
+        $this = $(this);
+        $('.circle').css('background-color', colors[i]);
+        for(var k = 1; k <= 6; k++) {
+            $('#slide'+k+' .figure').css("background-image","url(images/"+parseInt(i+1)+"-"+k+".png)");
+            $('#slide'+k+' p').text(contents[i][k-1]);
+        }
+        TweenLite.to($('.photo'), .5, {
+            opacity: 0,
+            ease: Power1.easeInOut,
+            onComplete: function(){
+                //Randomize images!
+                var r = Math.floor((Math.random() * 6) + 1);
+                $('#photo1').css({"background-image":"url(images/6-1-"+r+".jpg)"});
+                $('#photo2').css({"background-image":"url(images/6-2-"+r+".jpg)"});
+                $('#photo3').css({"background-image":"url(images/6-3-"+r+".jpg)"});
+                $('#photo4').css({"background-image":"url(images/6-4-"+r+".jpg)"});
+                $('#photo5').css({"background-image":"url(images/6-5-"+r+".jpg)"});
+                $('#photo6').css({"background-image":"url(images/6-6-"+r+".jpg)"});
+            }
         });
-        TweenLite.to($(this).parent(), .5, {
-            top:0,
-            width: "100%",
-            height: "100%",
-            ease: Power1.easeInOut
+        TweenLite.to($this, .5, {
+            opacity: 0,
+            scale: 1.2,
+            ease: Power1.easeInOut,
+            onComplete: function(){
+                TweenLite.to($this.parent().children(), .5, {
+                    scale: 0.75,
+                    ease: Power1.easeInOut
+                });
+                TweenLite.to($this.parent(), .5, {
+                    top:0,
+                    width: "100%",
+                    height: "100%",
+                    ease: Power1.easeInOut
+                });
+                TweenLite.to($this.parent().children('.title'), .5, {
+                    marginTop: "90px",
+                    ease: Power1.easeInOut
+                });
+                TweenLite.to($this.parent().children('.subtitle'), .5, {
+                    marginTop: "-10px",
+                    ease: Power1.easeInOut
+                });
+                TweenLite.to($this.parent().children('.text'), .5, {
+                    marginTop: "-15px",
+                    ease: Power1.easeInOut
+                });
+                swiper.lockSwipes();
+                stage = 1;
+                TweenLite.to($('.swiper-contents'), 1, {
+                    marginTop: -$(window).height()+120,
+                    ease: Power3.easeInOut
+                });
+                $('.hexagon').addClass('add-color-'+parseInt(i+1));
+            }
         });
-        TweenLite.to($(this).parent().children().first(), .5, {
-            marginTop: "100px",
-            ease: Power1.easeInOut
-        });
-        swiper.lockSwipes();
-        stage = 1;
-        TweenLite.to($('.swiper-contents'), 1, {
-            marginTop: -$(window).height()+120,
-            ease: Power3.easeInOut
-        });
-        $('.hexagon').addClass('add-color-'+parseInt(i+1));
-        $('#slide1').text(contents[i][0]);
-        $('#slide2').text(contents[i][1]);
-        $('#slide3').text(contents[i][2]);
     });
 });
