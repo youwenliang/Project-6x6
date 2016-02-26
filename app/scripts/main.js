@@ -37,7 +37,29 @@ var currentCH3;
 var $this;
 
 $(document).ready(function() {
+    TweenLite.to($('#logo'), 1, {
+        y: -25,
+        opacity: 1,
+        ease: Power3.easeInOut,
+    });
+    TweenLite.to($('#enter'), .75, {
+        opacity: 1,
+        y: 15,
+        delay: .5,
+        ease: Power3.easeInOut
+    });
+
+    var tl = new TimelineMax({repeat: -1, delay: .75}); 
+    tl.to($('#enter'), .75, {
+        y: "-=15px",
+        ease: Power1.easeInOut
+    }).to($('#enter'), .75, {
+        y: "+=15px",
+        ease: Power1.easeInOut
+    });
+
     $('#enter').click(function(){
+        tl.pause();
     	TweenLite.to($('.home-screen'), 1, {
     		marginTop: -$(window).height(),
     		ease: Power3.easeInOut
@@ -57,6 +79,7 @@ $(document).ready(function() {
         		marginTop: 0,
         		ease: Power3.easeInOut
         	});
+            tl.play();
         }
         else if(stage == 1){
             TweenLite.to($('.swiper-contents'), 1, {
@@ -81,6 +104,8 @@ $(document).ready(function() {
                 width: "330px",
                 height: currentH,
                 delay: .5,
+                force3D:true,
+                z: 0,
                 ease: Power1.easeInOut,
                 onComplete: function(){
                     TweenLite.to($('.photo'), .5, {
@@ -148,6 +173,8 @@ $(document).ready(function() {
                     top:0,
                     width: "100%",
                     height: "100%",
+                    force3D:true,
+                    z: 0,
                     ease: Power1.easeInOut
                 });
                 TweenLite.to($this.parent().children('.title'), .5, {

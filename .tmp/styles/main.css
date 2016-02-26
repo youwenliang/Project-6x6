@@ -4550,7 +4550,8 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 13%; }
+  top: 13%;
+  opacity: 0; }
 
 #logo:before {
   content: "";
@@ -4565,7 +4566,7 @@ body {
   margin: 0 auto;
   left: 0;
   right: 0;
-  bottom: 100px;
+  bottom: 115px;
   font-family: 'apercubold_italic';
   font-size: 14pt;
   text-align: center;
@@ -4573,6 +4574,9 @@ body {
   color: #2B3F46; }
   #enter:hover, .expand:hover {
     text-decoration: none; }
+
+#enter {
+  opacity: 0; }
 
 .expand {
   bottom: 20px;

@@ -41,6 +41,7 @@ body {
   right:0;
   margin: 0 auto;
   top: 13%;
+  opacity: 0;
 }
 
 #logo:before{
@@ -56,7 +57,7 @@ body {
   margin:0 auto;
   left:0;
   right:0;
-  bottom: 100px;
+  bottom: 115px;
   font-family: 'apercubold_italic';
   font-size: 14pt;
   text-align: center;
@@ -66,6 +67,10 @@ body {
   &:hover{
     text-decoration: none;
   }
+}
+
+#enter{
+  opacity: 0;
 }
 
 .expand {
