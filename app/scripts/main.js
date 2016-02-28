@@ -25,6 +25,8 @@ var swiper2 = new Swiper('.swiper-contents', {
     paginationClickable: true,
     parallax: true,
     speed: 600,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
     // loop: true,
 });
 

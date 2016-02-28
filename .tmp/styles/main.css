@@ -4580,9 +4580,9 @@ body {
 
 .expand {
   bottom: 20px;
-  color: #1D1E1D; }
+  color: #4F4F4F; }
   .expand:hover {
-    color: #1D1E1D; }
+    color: #4F4F4F; }
 
 #arrow {
   background-image: url(images/arrow.png);
@@ -4786,7 +4786,7 @@ body {
   font-size: 16pt;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #1D1E1D; }
+  color: #4F4F4F; }
 
 .swiper-container, .swiper-contents {
   width: 100%;
@@ -4794,7 +4794,7 @@ body {
 
 .swiper-slide {
   font-size: 18px;
-  color: #1D1E1D;
+  color: #4F4F4F;
   box-sizing: border-box;
   padding: 40px 60px; }
 
