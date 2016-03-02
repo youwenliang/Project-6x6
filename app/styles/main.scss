@@ -211,18 +211,20 @@ $colors : color-1 rgb(208,191,158),
   background-repeat: no-repeat;
 }
 
-.img p{
-  position: absolute;
+.text-content{
+  position: relative;
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: calc(100% - 180px);
+  bottom: 180px;
   text-align: center;
   font-family: "apercubold_italic";
   font-size: 16pt;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #4F4F4F;
+  z-index: 10;
+  opacity: 0;
 }
 
 
@@ -239,7 +241,7 @@ $colors : color-1 rgb(208,191,158),
     padding: 40px 60px;
 }
 .parallax-bg {
-    background: rgb(208,191,158);
+    background: #f3f3f3;
     position: absolute;
     left: 0;
     top: 0;

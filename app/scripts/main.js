@@ -3,7 +3,7 @@ var contents = [
      ["#01 Laugh a lot","#02 Never bored","#03 Easily understand","#04 Professional","#05 Believe in me","#06 Look after me"],
      ["2-1","2-2","2-3","2-4","2-5","2-6"],
      ["3-1","3-2","3-3","3-4","3-5","3-6"],
-     ["4-1","4-2","4-3","4-4","4-5","4-6"],
+     ["#01 San Francisco","#02 Tokyo","#03 New York City","#04 Helsinki","#05 Tallinn","#06 Seoul"],
      ["5-1","5-2","5-3","5-4","5-5","5-6"],
      ["6-1","6-2","6-3","6-4","6-5","6-6"],
 ];
@@ -21,12 +21,24 @@ var swiper = new Swiper('.swiper-container', {
     }
 });
 
+var t = 0;
 var swiper2 = new Swiper('.swiper-contents', {
     paginationClickable: true,
     parallax: true,
     speed: 600,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
+    onSlideChangeStart: function(swiper) {
+      t = swiper2.activeIndex;
+      TweenLite.to($('.text-content'), .5, {opacity:0, ease: Power1.easeInOut});
+    },
+    onSlideChangeEnd: function(swiper) {
+      t = swiper2.activeIndex;
+      if(stage == 1){
+          TweenLite.to($('.text-content'), .5, {opacity:1, ease: Power1.easeInOut});
+      }
+      $('.text-content').text(contents[i][t]);
+    }
     // loop: true,
 });
 
@@ -64,7 +76,10 @@ $(document).ready(function() {
         tl.pause();
     	TweenLite.to($('.home-screen'), 1, {
     		marginTop: -$(window).height(),
-    		ease: Power3.easeInOut
+    		ease: Power3.easeInOut,
+            onComplete: function(){
+                $('.parallax-bg').css({background: colors[i]});
+            }
     	});
         var r = Math.floor((Math.random() * 6) + 1);
         $('#photo1').css({"background-image":"url(images/6-1-"+r+".jpg)"});
@@ -77,8 +92,10 @@ $(document).ready(function() {
 
     $('.hexagon').click(function(){
         if(stage == 0){
+            $('.parallax-bg').css({background: "#f3f3f3"});
         	TweenLite.to($('.home-screen'), 1, {
         		marginTop: 0,
+                delay: .5,
         		ease: Power3.easeInOut
         	});
             tl.play();
@@ -89,6 +106,7 @@ $(document).ready(function() {
                 ease: Power3.easeInOut,
                 onComplete: function(){
                     swiper2.slideTo(0);
+                    TweenLite.to($('.text-content'), .5, {opacity:0, ease: Power1.easeInOut});
                     TweenLite.to($this, .5, {
                         opacity: 1,
                         scale: 1,
@@ -144,9 +162,9 @@ $(document).ready(function() {
         currentCH3 = $(this).parent().children('.text').css("margin-top");
         $this = $(this);
         $('.circle').css('background-color', colors[i]);
+        $('.text-content').text(contents[i][t]);
         for(var k = 1; k <= 6; k++) {
             $('#slide'+k+' .figure').css("background-image","url(images/"+parseInt(i+1)+"-"+k+".png)");
-            $('#slide'+k+' p').text(contents[i][k-1]);
         }
         TweenLite.to($('.photo'), .5, {
             opacity: 0,
@@ -195,7 +213,10 @@ $(document).ready(function() {
                 stage = 1;
                 TweenLite.to($('.swiper-contents'), 1, {
                     marginTop: -$(window).height()+120,
-                    ease: Power3.easeInOut
+                    ease: Power3.easeInOut,
+                    onComplete: function(){
+                        TweenLite.to($('.text-content'), .5, {opacity:1, ease: Power1.easeInOut});
+                    }
                 });
                 $('.hexagon').addClass('add-color-'+parseInt(i+1));
             }

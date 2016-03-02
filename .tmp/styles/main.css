@@ -4775,18 +4775,20 @@ body {
   background-size: contain;
   background-repeat: no-repeat; }
 
-.img p {
-  position: absolute;
+.text-content {
+  position: relative;
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: calc(100% - 180px);
+  bottom: 180px;
   text-align: center;
   font-family: "apercubold_italic";
   font-size: 16pt;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #4F4F4F; }
+  color: #4F4F4F;
+  z-index: 10;
+  opacity: 0; }
 
 .swiper-container, .swiper-contents {
   width: 100%;
@@ -4799,7 +4801,7 @@ body {
   padding: 40px 60px; }
 
 .parallax-bg {
-  background: #d0bf9e;
+  background: #f3f3f3;
   position: absolute;
   left: 0;
   top: 0;
